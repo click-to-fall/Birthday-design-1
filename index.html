@@ -563,23 +563,41 @@
 
     .slide.active { opacity: 1; }
 
-    .ribbon-frame {
-      position: relative;
-      width: min(560px, 100%);
-      background: #fff;
-      padding: 14px 14px 54px;
-      border-radius: 20px;
-      box-shadow: 0 20px 40px rgba(0,0,0,.25);
-    }
+.ribbon-frame {
+  position: relative;
+  width: min(560px, 100%);
+  background: #ffffff;
+  padding: 14px 14px 70px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,.25);
+  border: 8px solid #ffffff;
+}
 
-    .ribbon-frame img {
-      width: 100%;
-      height: auto;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-      border-radius: 12px;
-      background: #eee;
-    }
+.ribbon-frame img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 12px;
+  background: #eee;
+  border: 2px solid #f3dbe7;
+}
+
+.frame-caption {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 18px;
+  text-align: center;
+  color: #7a244f;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 10px 12px;
+  background: rgba(255, 245, 250, 0.95);
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0,0,0,.08);
+}
 
     .ribbon-frame::before,
     .ribbon-frame::after {
@@ -616,17 +634,6 @@
       box-shadow: 0 4px 10px rgba(0,0,0,.15);
     }
 
-    .frame-caption {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 14px;
-      text-align: center;
-      color: #6d2a4f;
-      font-weight: 600;
-      font-size: 0.95rem;
-      padding: 0 12px;
-    }
 
     .slider-controls {
       margin-top: 18px;
@@ -914,11 +921,20 @@
         min-height: 420px;
       }
 
-      .ribbon-frame {
-        padding: 12px 12px 48px;
-      }
     }
+@media (max-width: 560px) {
+  .ribbon-frame {
+    padding: 12px 12px 62px;
+  }
 
+  .frame-caption {
+    font-size: 0.92rem;
+    bottom: 14px;
+    left: 12px;
+    right: 12px;
+    padding: 8px 10px;
+  }
+}
     @media (max-width: 380px) {
       .message-card,
       .wish-card,
@@ -1411,5 +1427,4 @@
     startIntroCountdown();
   </script>
 </body>
-
 </html>
