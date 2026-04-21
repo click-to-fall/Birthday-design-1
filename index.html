@@ -545,7 +545,7 @@
     .slider {
       position: relative;
       width: 100%;
-      min-height: 520px;
+      min-height: 690px;
       border-radius: 24px;
       overflow: hidden;
       background: rgba(255,255,255,0.05);
@@ -558,7 +558,7 @@
       transition: opacity 0.6s ease;
       display: grid;
       place-items: center;
-      padding: 28px 18px 36px;
+      padding: 34px 18px 52px;
     }
 
     .slide.active { opacity: 1; }
@@ -918,20 +918,30 @@
       }
 
       .slider {
-        min-height: 420px;
+        min-height: 600px;
       }
 
     }
 @media (max-width: 560px) {
+  .slider {
+    min-height: 530px;
+  }
+
   .ribbon-frame {
-    padding: 12px 12px 62px;
+    width: min(320px, 100%);
+    padding: 10px 10px 58px;
+    border-width: 6px;
+  }
+
+  .ribbon-frame img {
+    aspect-ratio: 3 / 4;
   }
 
   .frame-caption {
-    font-size: 0.92rem;
-    bottom: 14px;
-    left: 12px;
-    right: 12px;
+    font-size: 0.88rem;
+    bottom: 12px;
+    left: 10px;
+    right: 10px;
     padding: 8px 10px;
   }
 }
@@ -953,6 +963,367 @@
         height: 205px;
       }
     }
+
+
+    .extra-memories-section {
+      padding: 70px 0;
+    }
+
+    .extra-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .photo-booth-card,
+    .trio-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+      padding: 22px;
+    }
+
+    .photo-booth-title,
+    .trio-title {
+      font-size: 1.4rem;
+      color: var(--gold);
+      margin-bottom: 14px;
+      text-align: center;
+    }
+
+    .photo-booth-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    .photo-strip {
+      width: min(290px, 100%);
+      background: linear-gradient(180deg, #fff9fc, #ffeef6);
+      padding: 14px;
+      border-radius: 28px;
+      box-shadow: 0 16px 30px rgba(0,0,0,.22);
+      border: 2px solid rgba(255,255,255,.7);
+      transform: rotate(-2deg);
+      position: relative;
+    }
+
+    .photo-strip::before {
+      content: "Photo Booth";
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #ff7eb6, #ff5c9a);
+      color: white;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 999px;
+      box-shadow: 0 8px 16px rgba(0,0,0,.18);
+    }
+
+    .strip-shot {
+      background: #fff;
+      padding: 8px;
+      border-radius: 18px;
+      margin-bottom: 12px;
+      box-shadow: 0 10px 18px rgba(0,0,0,.08);
+    }
+
+    .strip-shot:last-child {
+      margin-bottom: 0;
+    }
+
+    .strip-shot img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .strip-caption {
+      text-align: center;
+      color: #8a3a63;
+      font-size: 0.86rem;
+      font-weight: 600;
+      margin-top: 8px;
+    }
+
+    .trio-layout {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .mini-memory {
+      background: rgba(255,255,255,.08);
+      border-radius: 22px;
+      padding: 10px;
+      border: 1px solid rgba(255,255,255,.08);
+    }
+
+    .mini-memory img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+
+    .mini-memory p {
+      text-align: center;
+      margin-top: 8px;
+      color: var(--pink-soft);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .mini-memory.tall {
+      grid-column: span 2;
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .mini-memory.tall img {
+      aspect-ratio: 4 / 5;
+    }
+
+    .mini-memory.tall p {
+      margin-top: 0;
+      font-size: 1rem;
+      line-height: 1.7;
+      text-align: left;
+    }
+
+    @media (max-width: 900px) {
+      .extra-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .photo-booth-card,
+      .trio-card {
+        padding: 16px;
+      }
+
+      .photo-strip {
+        width: min(240px, 100%);
+        padding: 10px;
+      }
+
+      .trio-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .mini-memory.tall {
+        grid-column: span 1;
+        grid-template-columns: 1fr;
+      }
+
+      .mini-memory.tall p {
+        text-align: center;
+      }
+    }
+
+
+    .cute-sections-wrap {
+      padding: 12px 0 6px;
+    }
+
+    .polaroid-section,
+    .reasons-section,
+    .love-notes-section {
+      padding: 34px 0;
+    }
+
+    .polaroid-card,
+    .reasons-card,
+    .notes-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+      padding: 24px;
+    }
+
+    .polaroid-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .polaroid-item {
+      background: linear-gradient(180deg, #fff8fc, #fff0f6);
+      border-radius: 22px;
+      padding: 12px 12px 18px;
+      box-shadow: 0 16px 30px rgba(0,0,0,.18);
+      transform: rotate(-2deg);
+    }
+
+    .polaroid-item:nth-child(2) { transform: rotate(2deg) translateY(10px); }
+    .polaroid-item:nth-child(3) { transform: rotate(-4deg); }
+
+    .polaroid-item img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 2px solid #ffe3ef;
+      background: #eee;
+    }
+
+    .polaroid-item p {
+      text-align: center;
+      color: #8c315d;
+      margin-top: 10px;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .reasons-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .reason-box {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 24px;
+      padding: 22px 18px;
+      text-align: center;
+    }
+
+    .reason-icon {
+      width: 58px;
+      height: 58px;
+      margin: 0 auto 12px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 1.55rem;
+      background: linear-gradient(135deg, rgba(255,255,255,.28), rgba(255,255,255,.08));
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.1);
+    }
+
+    .reason-box h3 {
+      color: var(--gold);
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+    }
+
+    .reason-box p {
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 0.95rem;
+    }
+
+    .notes-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .main-note {
+      background: linear-gradient(180deg, rgba(255,250,252,.97), rgba(255,239,246,.95));
+      color: #7b2950;
+      border-radius: 28px;
+      padding: 24px;
+      min-height: 100%;
+      position: relative;
+      box-shadow: 0 20px 34px rgba(0,0,0,.16);
+    }
+
+    .main-note::before {
+      content: "love note";
+      position: absolute;
+      top: -14px;
+      left: 24px;
+      background: linear-gradient(135deg, #ff7daf, #ff5c9a);
+      color: #fff;
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: .4px;
+      box-shadow: 0 10px 18px rgba(0,0,0,.14);
+    }
+
+    .main-note h3,
+    .mini-notes h3 {
+      color: #8c315d;
+      margin-bottom: 10px;
+      font-size: 1.25rem;
+    }
+
+    .main-note p,
+    .mini-note p {
+      line-height: 1.95;
+      font-size: 0.97rem;
+    }
+
+    .mini-notes {
+      display: grid;
+      gap: 14px;
+    }
+
+    .mini-note {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 24px;
+      padding: 18px;
+      color: var(--cream);
+    }
+
+    .mini-note span {
+      display: inline-block;
+      margin-bottom: 8px;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    @media (max-width: 900px) {
+      .polaroid-grid,
+      .reasons-grid,
+      .notes-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .polaroid-item,
+      .polaroid-item:nth-child(2),
+      .polaroid-item:nth-child(3) {
+        transform: none;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .polaroid-card,
+      .reasons-card,
+      .notes-card {
+        padding: 16px;
+      }
+
+      .reasons-grid {
+        gap: 12px;
+      }
+
+      .reason-box {
+        padding: 18px 14px;
+      }
+
+      .main-note,
+      .mini-note {
+        padding: 16px;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -1135,6 +1506,62 @@
       </div>
     </section>
 
+    <section class="extra-memories-section">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">More Memories</span>
+          <h2>Cute photo booth &amp; special moments</h2>
+        </div>
+
+        <div class="extra-grid">
+          <div class="photo-booth-card">
+            <h3 class="photo-booth-title">Cute Photo Booth</h3>
+            <div class="photo-booth-wrap">
+              <div class="photo-strip">
+                <div class="strip-shot">
+                  <img src="image2.jpg" alt="Photo booth memory 1">
+                  <div class="strip-caption">pretty smile 💗</div>
+                </div>
+
+                <div class="strip-shot">
+                  <img src="image5.jpg" alt="Photo booth memory 2">
+                  <div class="strip-caption">our sweet vibe ✨</div>
+                </div>
+
+                <div class="strip-shot">
+                  <img src="image7.jpg" alt="Photo booth memory 3">
+                  <div class="strip-caption">forever favorite 📸</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="trio-card">
+            <h3 class="trio-title">3 more photos, different style</h3>
+
+            <div class="trio-layout">
+              <div class="mini-memory">
+                <img src="image3.jpg" alt="Extra memory 1">
+                <p>Golden moment</p>
+              </div>
+
+              <div class="mini-memory">
+                <img src="image6.jpg" alt="Extra memory 2">
+                <p>Softest memory</p>
+              </div>
+
+              <div class="mini-memory tall">
+                <img src="image9.jpg" alt="Extra memory 3">
+                <p>
+                  A special little corner for one more beautiful photo and a short lovely note
+                  that makes the page feel more personal and warm.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="music-section">
       <div class="container">
         <div class="section-head">
@@ -1171,6 +1598,107 @@
         </div>
       </div>
     </section>
+
+
+
+    <div class="cute-sections-wrap">
+      <section class="polaroid-section">
+        <div class="container">
+          <div class="section-head">
+            <span class="section-tag">Cute Moments</span>
+            <h2>Little polaroid memories</h2>
+          </div>
+
+          <div class="polaroid-card">
+            <div class="polaroid-grid">
+              <div class="polaroid-item">
+                <img src="image4.jpg" alt="Polaroid memory 1">
+                <p>my favorite smile ✨</p>
+              </div>
+
+              <div class="polaroid-item">
+                <img src="image6.jpg" alt="Polaroid memory 2">
+                <p>softest moment 💗</p>
+              </div>
+
+              <div class="polaroid-item">
+                <img src="image8.jpg" alt="Polaroid memory 3">
+                <p>pretty little memory 🌷</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="reasons-section">
+        <div class="container">
+          <div class="section-head">
+            <span class="section-tag">Why You Are Special</span>
+            <h2>Three cute reasons</h2>
+          </div>
+
+          <div class="reasons-card">
+            <div class="reasons-grid">
+              <div class="reason-box">
+                <div class="reason-icon">💞</div>
+                <h3>Your heart</h3>
+                <p>You make every moment softer, warmer, and more beautiful just by being you.</p>
+              </div>
+
+              <div class="reason-box">
+                <div class="reason-icon">🌸</div>
+                <h3>Your vibe</h3>
+                <p>Your energy is so lovely and peaceful, like a sweet memory that never fades.</p>
+              </div>
+
+              <div class="reason-box">
+                <div class="reason-icon">✨</div>
+                <h3>Your smile</h3>
+                <p>Your smile can change the whole mood and make everything feel bright and magical.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="love-notes-section">
+        <div class="container">
+          <div class="section-head">
+            <span class="section-tag">Tiny Notes</span>
+            <h2>Small words with big feelings</h2>
+          </div>
+
+          <div class="notes-card">
+            <div class="notes-grid">
+              <div class="main-note">
+                <h3>A note just for you</h3>
+                <p>
+                  Every photo here holds a little feeling, a little smile, and a little reminder of how special you are.
+                  I wanted this page to feel soft, cute, and full of love, just like the beautiful energy you bring.
+                </p>
+              </div>
+
+              <div class="mini-notes">
+                <div class="mini-note">
+                  <span>01</span>
+                  <p>You deserve every pretty thing this world can offer.</p>
+                </div>
+
+                <div class="mini-note">
+                  <span>02</span>
+                  <p>I hope your day feels calm, joyful, and full of sweet surprises.</p>
+                </div>
+
+                <div class="mini-note">
+                  <span>03</span>
+                  <p>This little website was made to make you smile even for one tiny moment.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
 
     <section class="wish-section">
       <div class="container">
